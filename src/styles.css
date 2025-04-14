@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.count,
+.step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+button {
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+}
