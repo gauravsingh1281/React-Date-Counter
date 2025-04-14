@@ -26,9 +26,7 @@ function Counter() {
     setStep((s) => (s += 1));
   }
   function stepDecrement() {
-    if (step > 1) {
-      setStep((s) => (s -= 1));
-    }
+    setStep((s) => (s -= 1));
   }
   const date = new Date();
   date.setDate(date.getDate() + count);
