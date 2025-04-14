@@ -11,23 +11,28 @@ export default function App() {
 
 function Counter() {
   const [count, setCount] = useState(0);
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
+
+  // Count increment and decrement
   function countIncrement() {
     setCount((c) => (c += step));
   }
   function countDecrement() {
-    if (count > 0) {
-      setCount((c) => (c -= step));
-    }
+    setCount((c) => (c -= step));
   }
+
+  // Step increment and decrement
   function stepIncrement() {
     setStep((s) => (s += 1));
   }
   function stepDecrement() {
-    if (step > 0) {
+    if (step > 1) {
       setStep((s) => (s -= 1));
     }
   }
+  const date = new Date();
+  date.setDate(date.getDate() + count);
+
   return (
     <>
       <div className="step">
@@ -41,7 +46,21 @@ function Counter() {
         <button onClick={countIncrement}>+</button>
       </div>
       <div className="show-date">
-        <p></p>
+        <span>
+          {count === 0
+            ? "Today Is "
+            : count > 0
+            ? `${count} Days From Today Is `
+            : `${Math.abs(count)} Days Ago Was `}
+        </span>
+        <span>
+          {date.toLocaleDateString("en-IN", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </span>
       </div>
     </>
   );
