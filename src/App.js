@@ -32,16 +32,25 @@ function Counter() {
   date.setDate(date.getDate() + count);
 
   return (
-    <>
+    <div className="card">
+      <h1>Date Counter</h1>
       <div className="step">
-        <button onClick={stepDecrement}>-</button>
-        <h1>Step: {step}</h1>
-        <button onClick={stepIncrement}>+</button>
+        <button className="decrement" onClick={stepDecrement}>
+          -
+        </button>
+        <h2>Step: {step}</h2>
+        <button className="increment" onClick={stepIncrement}>
+          +
+        </button>
       </div>
       <div className="count">
-        <button onClick={countDecrement}>-</button>
-        <h1>Count: {count}</h1>
-        <button onClick={countIncrement}>+</button>
+        <button className="decrement" onClick={countDecrement}>
+          -
+        </button>
+        <h2>Count: {count}</h2>
+        <button className="increment" onClick={countIncrement}>
+          +
+        </button>
       </div>
       <div className="show-date">
         <span>
@@ -60,6 +69,6 @@ function Counter() {
           })}
         </span>
       </div>
-    </>
+    </div>
   );
 }
